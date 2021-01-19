@@ -34,9 +34,11 @@ module WeatherWear
     class User
 
           @@all = []
+          attr_accessor :name, :zipcode
 
-          def initialize 
+          def initialize #Each user is initialized with a name and zipcode
             @name = name
+            @zipcode = zipcode
             @@all << self
           end
 
