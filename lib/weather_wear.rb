@@ -29,6 +29,7 @@ module WeatherWear
         def parse_json
           JSON.parse(get_response_body) #converts json returned from get_response_body into data structures.
         end
+     end
 
 
     class User
@@ -37,10 +38,24 @@ module WeatherWear
           attr_accessor :name, :zipcode
 
           def initialize #Each user is initialized with a name and zipcode
-            @name = name
-            @zipcode = zipcode
+            @name = name         
             @@all << self
           end
+
+          def greeting(name)
+            puts "Hello #{name}! Please enter your zipcode."
+          end
+
+          def enter_info (zipcode)
+            # this method needs to take in a zip code, parse through the response body to get temp and conditions for the region.
+            # are we iterating through the reponse body, through the array/hashes?
+            response.body.each do |location_name, region, temp_f, condition|
+              puts "#{location_name}, #{region}, #{temp_f}, #{condition}"
+            end
+            
+            def clothing_recommendation
+                
+
 
 
 
