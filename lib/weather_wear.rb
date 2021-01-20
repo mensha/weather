@@ -54,6 +54,8 @@ module WeatherWear
             end
             
             def clothing_recommendation(zipcode)
+              #perhaps I need to rerthink this method. I have already called the info needed in the "#enter_info"  method.
+              #
               response.body.each do |temp_f, condition|
                 if temp_f >= 80 && condition == clear
                   puts "Today is a good day for shorts and a T-shirt!"
