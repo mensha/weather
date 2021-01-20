@@ -53,8 +53,34 @@ module WeatherWear
               puts "#{location_name}, #{region}, #{temp_f}, #{condition}"
             end
             
-            def clothing_recommendation
-                
+            def clothing_recommendation(zipcode)
+              response.body.each do |temp_f, condition|
+                if temp_f >= 80 && condition == clear
+                  puts "Today is a good day for shorts and a T-shirt!"
+                elsif temp_f < 80 || temp_f > 60 && condition == clear
+                  puts "Today is a good day for long pants and a lightweight jacket!"
+                elsif temp_f < 59 || temp_f > 30 && condition == clear
+                  puts "Today is a good day for long pants and a mediumweight jackets!"
+                elsif temp_f < 29 || temp_f > 10 && condition == clear
+                  puts" Today is a good day for a layers and a heavy coat!"
+                elsif temp > 10 || temp_f > 0 && condition == clear 
+                  puts " Today is a good day to STAY HOME!"
+                elsif temp_f >= 80 && condition == rain
+                    puts "Today is a good day for shorts and a T-shirt! Pack a raincoat!"
+                  elsif temp_f < 80 || temp_f > 60 && condition == clear
+                    puts "Today is a good day for long pants and a lightweight jacket! Pack a raincoat!"
+                  elsif temp_f < 59 || temp_f > 30 && condition == clear
+                    puts "Today is a good day for long pants and a mediumweight jacket! Pack a raincoat!"
+                  elsif temp_f < 29 || temp_f > 10 && condition == clear
+                    puts" Today is a good day for a layers and a heavy coat! Pack your umbrella!"
+                  elsif temp_f > 10 || temp_f > 0 && condition == snow
+                    puts " Today is a good day to STAY HOME!"
+                else
+                  puts "STAY HOME AND UNDER THE COVERS!"
+
+                end
+              end
+
 
 
 
