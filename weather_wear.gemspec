@@ -3,6 +3,7 @@
 require_relative "lib/weather_wear/version"
 
 Gem::Specification.new do |spec|
+  spec.add_development_dependency "rspec", "~> 3.2"
   spec.name          = "weather_wear"
   spec.version       = WeatherWear::VERSION
   spec.authors       = ["mensha"]

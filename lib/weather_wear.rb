@@ -1,21 +1,28 @@
 # frozen_string_literal: true
-require 'pry'
+
 require_relative "weather_wear/version"
 require 'net/http'
  require 'open-uri'
  require 'json'
  require 'pry'
+ require 'uri'
 
 module WeatherWear
   # class Error < StandardError; end
   # Your code goes here...
+  
+  print('please enter your zip code')
+  zip_input = gets() #zip comes from user input
 
     class GetRequest
 
-      URL = http://api.weatherapi.com/v1/current.json
+      
+
+      URL = "http://api.weatherapi.com/v1/current.json?key=81015c1773c5426092a30651210901&q=" + zip_input
 
         def initialize(url)
             @url = url
+            binding.pry
         end
 
       
