@@ -1,15 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "weather_wear/version"
-require 'net/http'
- require 'open-uri'
- require 'json'
- require 'pry'
- require 'uri'
+ 
 
-module WeatherWear
-  # class Error < StandardError; end
-  # Your code goes here...
   
   print('please enter your zip code')
   zip_input = gets() #zip comes from user input
